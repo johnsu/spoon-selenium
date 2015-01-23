@@ -1,0 +1,10 @@
+from wget,python-selenium:3.4.2
+
+# create the startup file
+batch cmd
+	echo cd c:\ > c:\startup-example.bat
+	echo wget https://raw.githubusercontent.com/johnsu/spoon-selenium/master/tests/compatibility.py --no-check-certificate  >> c:\startup-example.bat
+	echo c:\Python34\Lib\idlelib\idle.bat c:\compatibility.py >> c:\startup-example.bat
+
+# set the startup file, using "/c" argument since spoon defaults to "/k" (leaves the cmd open)
+startup file ("cmd.exe", "/c", "c:\startup-example.bat")
